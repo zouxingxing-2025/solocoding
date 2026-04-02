@@ -20,4 +20,33 @@ allowed-tools: Read, Write
   - 代码检查（Lint、格式）
   - 测试运行（单元测试、集成测试）
   - 构建制品（Docker 镜像或压缩包）
-  - 部署到目标
+  - 部署到目标服务器（如通过 SSH 或云服务）
+- 将配置文件写入项目根目录下的相应路径（如 `.github/workflows/deploy.yml`）。
+
+## Assert
+- 配置文件语法正确（可引用现有模板）。
+- 包含必要的环境变量和密钥占位符（如 `${{ secrets.DEPLOY_KEY }}`）。
+
+## Artefact
+- CI/CD 配置文件。
+
+## Analysis
+- 检查部署步骤是否与 `deployment.yaml` 中的配置一致。
+- 若使用 Docker，确保已生成 `Dockerfile`。
+
+## Adjust
+- 如果用户未指定 CI/CD 平台，使用 GitHub Actions 作为默认。
+- 若部署需要特定密钥，提示用户在仓库设置中添加。
+
+## Advance
+- 更新 `.ai/进度状态.json`：
+  ```json
+  {
+    "current_step": "B11",
+    "steps_completed": ["...", "B10"]
+  }
+  ```
+- 提示用户：下一步应执行 B11。
+
+## 干预
+无。
