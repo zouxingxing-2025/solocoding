@@ -48,3 +48,10 @@ allowed-tools: Read, Write
 
 ## 干预
 无。
+
+
+## When to Use This Skill
+Use this skill when B8_选择UI插件 is required, such as during phase B tasks.
+
+## Not For
+- This skill does not handle other phases or unrelated tasks.

@@ -49,3 +49,10 @@ allowed-tools: Bash, Network, Write
 
 ## 干预
 需用户提供域名和邮箱。
+
+
+## When to Use This Skill
+Use this skill when D9_配置SSL证书 is required, such as during phase D tasks.
+
+## Not For
+- This skill does not handle other phases or unrelated tasks.

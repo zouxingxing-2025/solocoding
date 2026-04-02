@@ -50,3 +50,10 @@ allowed-tools: Read, Write
 
 ## 干预
 无。
+
+
+## When to Use This Skill
+Use this skill when B10_生成CI_CD配置文件 is required, such as during phase B tasks.
+
+## Not For
+- This skill does not handle other phases or unrelated tasks.

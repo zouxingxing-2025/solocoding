@@ -49,3 +49,10 @@ allowed-tools: Read, Write, Bash
 
 ## 干预
 无。
+
+
+## When to Use This Skill
+Use this skill when C6_生成多demo is required, such as during phase C tasks.
+
+## Not For
+- This skill does not handle other phases or unrelated tasks.
