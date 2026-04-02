@@ -1,0 +1,4 @@
+# 数据模型引用文件
+# 指定 data-model.json 的路径
+
+path: "data-model.json"
