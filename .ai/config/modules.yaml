@@ -1,0 +1,9 @@
+# 功能模块清单
+# 由启动器在阶段2（B6）根据用户勾选的功能生成
+
+modules: []
+  # 示例：
+  # - id: "mod_001"
+  #   name: "岗位发布"
+  #   spec_path: "docs/requirements/module_001_岗位发布/spec.md"
+  #   status: "规划中"

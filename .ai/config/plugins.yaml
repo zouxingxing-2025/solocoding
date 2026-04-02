@@ -1,0 +1,12 @@
+# 插件配置
+# 由启动器在阶段2（B7, B8）根据选择生成
+
+api_plugins: []
+  # 示例：
+  # - name: "standard_crud"
+  #   config: { entity: "positions" }
+
+ui_plugins: []
+  # 示例：
+  # - name: "DataTable"
+  #   config: { columns: ["city", "position_name"] }

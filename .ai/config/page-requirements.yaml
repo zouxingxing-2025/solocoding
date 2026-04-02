@@ -1,0 +1,20 @@
+# 页面需求配置
+# 由启动器在阶段1（A2, A3）根据用户回答填充
+
+input_pages: []
+  # 示例：
+  # - name: "发布岗位表单"
+  #   fields:
+  #     - name: "position_name"
+  #       type: "string"
+  #       required: true
+  #     - name: "city"
+  #       type: "string"
+  #       required: true
+  #   actions: ["insert into positions"]
+
+output_pages: []
+  # 示例：
+  # - name: "岗位缺口汇总表"
+  #   fields: ["city", "position_name", "gap_count"]
+  #   aggregation: "group by city"
