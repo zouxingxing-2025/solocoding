@@ -1,0 +1,15 @@
+# 技术栈配置
+# 由启动器在阶段1（A1-A12）根据用户选择填充
+
+frontend: ""    # 例如 "React 18", "Vue 3", "Angular 15"
+backend: ""     # 例如 "FastAPI (Python 3.11)", "Node.js (Express)"
+database: ""    # 例如 "PostgreSQL 15", "MySQL 8", "SQLite"
+deployment: ""  # 例如 "Docker + Nginx", "Vercel", "Kubernetes"
+
+# 可选详细配置
+details:
+  frontend_framework: ""    # 如 "Next.js", "Nuxt.js"
+  backend_framework: ""     # 如 "FastAPI", "Express"
+  orm: ""                  # 如 "SQLAlchemy", "Prisma"
+  testing_framework: ""     # 如 "pytest", "Jest"
+  ci_cd: ""                # 如 "GitHub Actions", "GitLab CI"
