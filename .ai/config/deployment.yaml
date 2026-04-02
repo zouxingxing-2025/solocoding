@@ -1,0 +1,29 @@
+# 部署配置
+# 由启动器在阶段4（D1-D11）根据用户输入或自动检测填充
+
+# 服务器地址
+server: ""          # 例如 "example.com" 或 "192.168.1.100"
+
+# 域名
+domain: ""          # 例如 "app.example.com"
+
+# 是否启用 SSL
+ssl: false          # true / false
+
+# 部署策略
+strategy: ""        # "blue-green" 或 "rolling" 或 "manual"
+
+# 应用端口（内部）
+app_port: 8000
+
+# 反向代理端口（外部）
+proxy_port: 80
+proxy_ssl_port: 443
+
+# Docker 镜像仓库（可选）
+registry: ""        # 例如 "docker.io/username/project"
+
+# 环境变量（示例，实际应使用 .env 文件）
+env:
+  DEBUG: "false"
+  DATABASE_URL: ""  # 由 D6 步骤填充
