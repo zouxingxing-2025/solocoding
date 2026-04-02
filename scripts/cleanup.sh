@@ -14,7 +14,7 @@ rm -rf .ai/backup/
 rm -rf .ai/logs/
 
 # 删除经验库待整理目录（保留已分类）
-rm -rf .ai/经验库/待整理/
+rm -rf .ai/experience-pending/
 
 # 删除 demo 临时目录
 rm -rf .ai/demos/
