@@ -29,6 +29,19 @@
 - TRAE IDE（已安装并登录）
 - 网络连接（用于下载依赖和组件）
 
+## 环境准备（首次使用）
+
+本方案依赖以下命令行工具，请提前安装：
+
+- **jq**：JSON处理工具（ `https://stedolan.github.io/jq/download/` ）
+- **check-jsonschema**：JSON Schema验证（`pip install check-jsonschema`）
+- **flake8**：Python代码规范（`pip install flake8`）
+- **eslint**：JavaScript代码规范（`npm install -g eslint`）
+- **pytest**：Python测试框架（`pip install pytest`）
+- **bandit**：Python安全扫描（`pip install bandit`）
+
+如果缺少工具，AI会在执行时提示并中止，请根据提示安装。
+
 ### 2. 初始化项目
 将本组件包解压到空项目目录，然后用 TRAE 打开该目录。
 

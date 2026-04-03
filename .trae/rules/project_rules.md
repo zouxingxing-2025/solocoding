@@ -38,3 +38,26 @@
 ## 用户豁免
 - 高级用户可通过在步骤指令中添加 `--no-backup` 参数跳过备份。
 - 跳过备份时，AI 必须输出警告："⚠️ 跳过备份，后续无法自动回滚，风险自担。"
+
+## 双向收敛强制规则
+- AI在执行任何设计类步骤（B0.2, B6-B8）前，必须确认输入页面和展示页面已定义（`input_pages`和`output_pages`非空）。
+- 所有中间层（API、功能逻辑）必须基于这两端推导，不得凭空创造。
+- 如果用户要求的功能无法通过收敛得到（例如需要新增数据字段），AI必须提示用户先更新数据模型或页面需求。
+
+## 强制执行验证（外部工具）
+
+AI在执行以下步骤时，必须运行对应的验证命令，不得跳过：
+
+- A7: `jq empty .ai/tmp/data-model-draft.json`
+- A11: `check-jsonschema --schemafile shared/schemas/data-model.schema.json data-model.json`
+- B9（Python）: `flake8 backend/`
+- B9（JavaScript）: `eslint frontend/`
+- C3: `pytest tests/ -q`
+- C5: `bandit -r backend/`
+
+如果命令返回非0退出码，AI必须：
+1. 输出错误详情。
+2. 中止当前步骤。
+3. 提示用户："验证失败，请修复后重试。"
+
+AI不得以任何理由（如"用户没有要求"）跳过这些验证，除非用户明确使用 `--skip-validation`。
