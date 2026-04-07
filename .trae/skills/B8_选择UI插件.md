@@ -13,6 +13,10 @@ allowed-tools: Read, Write
 
 ## Action
 - 读取 `.ai/config/modules.yaml` 和 `data-model.json`，以及已选定的 API 插件配置。
+- **选择UI插件**：
+  - 优先推荐支持主题定制的UI库（如 Ant Design、Material-UI、Tailwind CSS）。
+  - 如果用户选择的库不支持主题定制（如 Bootstrap 4），AI必须拒绝并提示："该UI库不支持主题定制，无法与设计系统保持一致。请选择 Ant Design、Material-UI 或 Tailwind CSS。"
+  - 用户确认后，记录插件配置到 `.ai/config/plugins.yaml`。
 - 对于每个模块，根据其展示类型匹配 UI 插件：
   - 列表/表格 → 数据表格插件（支持分页、排序、筛选）
   - 表单/输入 → 表单生成器插件（基于字段类型自动生成输入控件）
@@ -20,7 +24,8 @@ allowed-tools: Read, Write
   - KPI 卡片 → 指标卡片插件
   - 详情页 → 详情展示插件
 - 生成 UI 插件配置（如列定义、图表类型、表单字段映射），存入 `.ai/config/plugins.yaml` 的 `ui_plugins` 部分。
-- 确保所有模块的 UI 插件使用统一的设计系统（如 Ant Design、Element Plus）。
+- 确保所有模块的 UI 插件使用统一的设计系统。
+- 生成主题定制配置文件（如 `theme.config.js` 或 `theme-override.less`），将设计令牌映射到组件库的主题变量。
 
 ## Assert
 - 每个模块至少绑定一个 UI 插件。
@@ -35,6 +40,7 @@ allowed-tools: Read, Write
 
 ## Adjust
 - 如果某个模块没有合适的 UI 插件，标记为"需自定义开发"，并生成基础 HTML 骨架。
+- 如果用户坚持使用不支持的库，警告"设计令牌可能无法完全应用"，并跳过主题定制检查。
 
 ## Advance
 - 更新 `.ai/进度状态.json`：

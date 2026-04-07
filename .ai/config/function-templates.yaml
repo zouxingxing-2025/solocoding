@@ -1,13 +1,17 @@
-- id: user_auth
-  name: 用户认证
-  description: 用户注册、登录、登出、身份验证（JWT）。适用于需要多用户访问和数据隔离的系统。
-  required_fields:
-    - users (entity)
-  computation: "JWT token generation and verification"
-  presentation:
-    - 登录表单
-    - 注册表单
-    - 受保护的路由/页面
-  api_plugin: auth_api
-  ui_plugin: auth_ui
-  tags: ["security", "user", "auth"]
+# 功能模板配置 - 用于B2步骤加载功能模板
+# 本文件定义了可自动匹配的功能模板，AI会根据字段语义和实体自动推荐。
+
+templates:
+  - id: user_auth
+    name: 用户认证
+    description: 用户注册、登录、登出、身份验证（JWT）。适用于需要多用户访问和数据隔离的系统。
+    required_fields:
+      - users
+    computation: "JWT token generation and verification"
+    presentation:
+      - 登录表单
+      - 注册表单
+      - 受保护的路由/页面
+    api_plugin: auth_api
+    ui_plugin: auth_ui
+    tags: ["security", "user", "auth"]
